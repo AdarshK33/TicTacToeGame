@@ -6,7 +6,15 @@
       <p class="text-2xl text-gray-700 font-light">I am Software Engineer & MER[v]N FullStack Developer</p>
       <div class="space-x-4">
         <a href="/contact" class="px-4 py-2 rounded-md border-2 border-gray-700 text-gray-700 font-semibold hover:bg-gray-700 hover:text-white">Hire Me</a>
-        <button class="px-4 py-2 rounded-md bg-black text-white font-semibold">Download CV</button>
+        <button class="px-4 py-2 rounded-md bg-black text-white font-semibold">
+          <a 
+      href="/assets/cv/Resume Adarsh Kumar .pdf" 
+      download 
+      class="bg-white-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+      Download CV
+    </a>
+        
+        </button>
       </div>
     </div>
   </section>
