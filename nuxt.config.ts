@@ -9,11 +9,20 @@ export default defineNuxtConfig({
     },
   },
 
+  
+  // plugins: [{ src: '~/plugins/aos.client.js', mode: 'client' }],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+  
+    
   },
 
+  css: [
+    'aos/dist/aos.css'
+  ],
+  plugins: ['~/plugins/aos.js'],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+
 
   nitro: {
     prerender: {
