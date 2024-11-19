@@ -7,8 +7,8 @@
        <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
        <!-- https://vuetifyjs.com/en/features/application-layout/
          Navbar contains all nav components such as v-app-bar, v-system-bar, v-navigation-drawer, v-bottom-navigation -->
-         <Header-nav /> 
-       <v-main class="py-4 relative">
+         <Header-nav class="fixed z-50" /> 
+        <v-main class="py-4 relative ">
          <slot >   </slot>
 
        </v-main>
@@ -19,3 +19,28 @@
      <!-- </div> -->
    </div>
  </template>
+
+<script setup>
+useHead({
+  titleTemplate: 'AK',
+  link: [
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+      crossorigin: ''
+    }
+  ]
+})
+</script>
+
+<style>
+body {
+  font-family: 'Roboto';
+}
+
+
+</style>
