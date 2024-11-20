@@ -1,5 +1,5 @@
 <template>
    <div class="mt-20 relative">
-    work in progress...
+   <Skills></Skills>
    </div>
 </template>
