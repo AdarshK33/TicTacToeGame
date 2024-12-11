@@ -13,6 +13,7 @@
       </button>
 
       <google-map></google-map>
+      <social-web></social-web>
     </div>
   </template>
   
