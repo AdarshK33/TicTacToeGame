@@ -3,7 +3,7 @@
       <div class="container mx-auto text-center">
         <a href="/contact-us" class="text-lg font-semibold hover:text-gray-400">Contact Us</a>
         <p class="mt-2">
-          Need to get in touch with Saqlain? <br />
+          Need to get in touch with Adarsh? <br />
           Contact through the links below!
         </p>
   
