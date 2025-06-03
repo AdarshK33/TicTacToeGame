@@ -9,7 +9,7 @@
   <p class="text-lg md:text-xl font-semibold text-gray-500">Hello</p>
   <p class="text-3xl md:text-5xl font-bold tracking-wide text-black">I'M ADARSH</p>
   <p class="text-lg md:text-2xl text-gray-700 font-light">
-    I am a Software Engineer & MERN FullStack Developer
+    I am a Software Engineer & MER[v]N FullStack Developer
   </p>
   <div class="space-x-4">
     <a 
