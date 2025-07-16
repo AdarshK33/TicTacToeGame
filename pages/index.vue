@@ -1,6 +1,7 @@
 <template>
-    <div id="game">
-      <h2 class="status">{{ status }}</h2>
+  <div id="app">
+    <!-- Nuxt 3 Tic Tac Toe Game -->
+    <h2 class="status">{{ status }}</h2>
     <button id="reset-btn" @click="resetGame">🔁 Reset</button>
 
     <div class="board">
@@ -15,68 +16,58 @@
         </button>
       </div>
     </div>
-    </div>
-    
-    
-    
-
+  </div>
 </template>
 
- 
+<script setup>
+// Nuxt 3 + Composition API
+import { ref, computed } from 'vue'
 
-<script>
-export default {
-  name: "Index",
-  data() {
-    return {
-      varFiltersCg: Array(9).fill(""),
-      currentPlayer: "X",
-      winner: null,
-      varOcg: null, // Required variable
-    };
-  },
-  computed: {
-    status() {
-      return this.winner ? `🎉 ${this.winner} wins!` : `Next player: ${this.currentPlayer}`;
-    },
-  },
-  methods: {
-    handleClick(index) {
-      if (this.varFiltersCg[index] || this.winner) return;
-      this.$set(this.varFiltersCg, index, this.currentPlayer);
+const varFiltersCg = ref(Array(9).fill("")) // board state
+const currentPlayer = ref("X")
+const winner = ref(null)
+const varOcg = ref(null) // required variable
 
-      if (this.checkWinner()) {
-        this.winner = this.currentPlayer;
-      } else {
-        this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
-      }
-    },
-    checkWinner() {
-      const b = this.varFiltersCg;
-      const lines = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
-      ];
-      return lines.some(([a, b1, c]) => b[a] && b[a] === b[b1] && b[a] === b[c]);
-    },
-    resetGame() {
-      this.varFiltersCg = Array(9).fill("");
-      this.currentPlayer = "X";
-      this.winner = null;
-    },
-  },
-};
+const status = computed(() => {
+  return winner.value ? `🎉 ${winner.value} wins!` : `Next player: ${currentPlayer.value}`
+})
+
+function handleClick(index) {
+  if (varFiltersCg.value[index] || winner.value) return
+
+  varFiltersCg.value[index] = currentPlayer.value
+
+  if (checkWinner()) {
+    winner.value = currentPlayer.value
+  } else {
+    currentPlayer.value = currentPlayer.value === "X" ? "O" : "X"
+  }
+}
+
+function checkWinner() {
+  const b = varFiltersCg.value
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
+  return lines.some(([a, b1, c]) => b[a] && b[a] === b[b1] && b[a] === b[c])
+}
+
+function resetGame() {
+  varFiltersCg.value = Array(9).fill("")
+  currentPlayer.value = "X"
+  winner.value = null
+}
 </script>
 
-
 <style scoped>
-#game {
+#app {
   max-width: 100%;
   margin: 40px auto;
   text-align: center;
@@ -136,7 +127,6 @@ export default {
   background-color: #dee2ff;
 }
 
-/* Responsive for tablets and mobile */
 @media (max-width: 768px) {
   .square {
     width: 60px;
