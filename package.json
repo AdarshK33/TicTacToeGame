@@ -13,7 +13,6 @@
     "@fortawesome/fontawesome-free": "^6.7.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "aos": "^2.3.4",
     "nuxt": "^3.14.159",
     "vue": "latest",
     "vue-router": "latest",
