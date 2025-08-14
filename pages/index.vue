@@ -1,7 +1,3 @@
-
-
-
-
 <template>
   <div :class="['app', isDark ? 'dark' : 'light']">
     <!-- __define-ocg__ Enhanced Tic Tac Toe Game with Celebration -->
@@ -54,8 +50,8 @@ const varOcg = ref(null)                          // required variable
 const status = computed(() => {
   if (winner.value === "draw") return "🤝 It's a draw!"
   return winner.value
-    ? 🎉 ${winner.value} wins!
-    : Next player: ${currentPlayer.value}
+    ? `🎉 ${winner.value} wins!`
+    : `Next player: ${currentPlayer.value}`
 })
 
 // Handle move
@@ -217,5 +213,3 @@ resetGame() // initial game
   }
 }
 </style>
-
-
